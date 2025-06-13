@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual Environments
+venv/
+env/
+ENV/
+*.env
+
+# Django database
+*.sqlite3
+
+# Migrations (optional to ignore unless sharing db state)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Django secrets
+*.log
+*.pot
+*.pyc
+db.sqlite3
+local_settings.py
+
+# VS Code
+.vscode/
+
+# PyCharm
+.i

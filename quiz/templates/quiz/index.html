@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Capital Quiz</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .correct { color: green; }
+        .wrong { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Guess the Capital!</h1>
+
+    {% if error %}
+        <p class="wrong">Error: {{ error }}</p>
+    {% else %}
+        <form method="post" action="{% url 'check_answer' %}">
+            {% csrf_token %}
+            <p>What is the capital of <strong>{{ country }}</strong>?</p>
+            <input type="text" name="answer" required>
+            <button type="submit">Check</button>
+        </form>
+    {% endif %}
+
+    {% if user_answer is not None %}
+        {% if is_correct %}
+            <p class="correct">🎉 Correct!</p>
+        {% else %}
+            <p class="wrong">❌ Wrong! Correct answer is: {{ correct_capital|title }}</p>
+        {% endif %}
+        <form action="{% url 'quiz' %}" method="get">
+            <button type="submit">Next Question</button>
+        </form>
+    {% endif %}
+</body>
+</html>
