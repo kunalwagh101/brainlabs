@@ -4,7 +4,7 @@
 
 # Clone the repository
 
-    git clone https://github.com/e9kwagh/Everest.git
+    git clone https://github.com/kunalwagh101/brainlabs.git
 
 # Create a virtual environment
 
